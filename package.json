@@ -1,12 +1,20 @@
 {
-  "name": "development",
-  "version": "0.0.0",
-  "description": "development",
-  "license": "MIT",
-  "repository": "",
-  "author": "",
+  "name": "funkster-http-accepts",
+  "version": "0.5.0",
+  "description": "Funkster is a compositional server library. This package contains combinators to parse the Accept header of a request.",
+  "license": "Unlicense",
+  "repository": "git@github.com:Bomret/funkster-http-accepts.git",
+  "author": "Stefan Reichel <dev@bomret.com>",
   "keywords": [
-    ""
+    "server",
+    "compose",
+    "composition",
+    "functional",
+    "funkster",
+    "http",
+    "web",
+    "accept",
+    "header"
   ],
   "files": [
     "index.js",

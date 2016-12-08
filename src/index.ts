@@ -1,6 +1,5 @@
+import * as cDispo from "content-disposition";
 import * as cType from "content-type";
-// tslint:disable-next-line:no-var-requires
-const cDispo = require("content-disposition");
 import { HttpPipe, request, setHeader } from "funkster-http";
 
 export type ContentEncoding =
@@ -54,8 +53,10 @@ export function setContentType(type: string | cType.MediaType): HttpPipe {
   }
 }
 
-export function setContentDisposition(filenameOrOptions: string | any, options?: any): HttpPipe {
-  if (typeof filenameOrOptions === "string") {
+export function setContentDisposition(filenameOrOptions?: string | cDispo.Options, options?: cDispo.Options): HttpPipe {
+  if (!filenameOrOptions) {
+    return setHeader("Content-Disposition", cDispo());
+  } else if (typeof filenameOrOptions === "string") {
     return setHeader("Content-Disposition", cDispo(filenameOrOptions, options));
   } else {
     return setHeader("Content-Disposition", cDispo(undefined, filenameOrOptions));

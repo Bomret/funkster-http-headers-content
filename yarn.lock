@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@types/content-disposition@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@types/content-disposition/-/content-disposition-0.5.0.tgz#8b6de9e58ecdc99efa66b83fd5289e57d15d7cb6"
+
 "@types/content-type@^1.0.33":
   version "1.0.33"
   resolved "https://registry.yarnpkg.com/@types/content-type/-/content-type-1.0.33.tgz#171849e4652dcd589c3e4ab72b81f26e87915758"

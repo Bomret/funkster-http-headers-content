@@ -170,18 +170,40 @@ describe("When setting the Content headers of a response", () => {
         .expect("Content-Type", "application/json; charset=utf-8"));
   });
 
-  describe("and setting the Content-Disposition to 'attachment; filename=some.txt' via string", () => {
-    const pipe = compose(setContentDisposition("attachment; filename=some.txt"), Ok());
+  describe("and setting the Content-Disposition to 'attachment' without any parameter", () => {
+    const pipe = compose(setContentDisposition(), Ok());
     const server = http.createServer(asRequestListener(pipe));
 
     it("should set the response header correctly", () =>
       request(server)
         .get("/")
         .expect(200)
-        .expect("Content-Disposition", "attachment; filename=some.txt"));
+        .expect("Content-Disposition", "attachment"));
   });
 
-  describe("and setting the Content-Type to 'attachment; filename=some.txt' via a ContentDisposition object", () => {
+  describe("and setting the Content-Disposition to 'attachment' via a options object", () => {
+    const pipe = compose(setContentDisposition({ type: "attachment" }), Ok());
+    const server = http.createServer(asRequestListener(pipe));
+
+    it("should set the response header correctly", () =>
+      request(server)
+        .get("/")
+        .expect(200)
+        .expect("Content-Disposition", "attachment"));
+  });
+
+  describe("and setting the Content-Disposition to 'attachment; filename=some.txt' via a options object", () => {
+    const pipe = compose(setContentDisposition("some.txt", { type: "attachment" }), Ok());
+    const server = http.createServer(asRequestListener(pipe));
+
+    it("should set the response header correctly", () =>
+      request(server)
+        .get("/")
+        .expect(200)
+        .expect("Content-Disposition", 'attachment; filename="some.txt"'));
+  });
+
+  describe("and setting the Content-Disposition to 'attachment; filename=some.txt' via string", () => {
     const pipe = compose(setContentDisposition("some.txt"), Ok());
     const server = http.createServer(asRequestListener(pipe));
 

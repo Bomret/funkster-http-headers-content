@@ -39,6 +39,7 @@
     "funkster-http": "^0.6.0"
   },
   "devDependencies": {
+    "@types/content-disposition": "^0.5.0",
     "@types/content-type": "^1.0.33",
     "@types/mocha": "2.2.33",
     "@types/node": "6.0.31",

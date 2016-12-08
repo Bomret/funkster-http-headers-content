@@ -2,10 +2,10 @@ import { Ok, asRequestListener } from "funkster-http";
 import * as http from "http";
 import * as request from "supertest";
 
-import { parseAccepts } from "../src";
+import { parseAcceptHeaders } from "../src";
 
 describe("When the client sends a request", () => {
-  const pipe = parseAccepts(acc => Ok(JSON.stringify(acc.types())));
+  const pipe = parseAcceptHeaders(acc => Ok(JSON.stringify(acc.types())));
 
   const server = http.createServer(asRequestListener(pipe));
 

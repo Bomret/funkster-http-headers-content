@@ -7,14 +7,26 @@
 [![bitHound](https://img.shields.io/bithound/code/github/Bomret/funkster-http-headers-content.svg)](https://www.bithound.io/github/Bomret/funkster-http-headers-content)
 [![Travis](https://travis-ci.org/Bomret/funkster-http-headers-content.svg?branch=master)](https://travis-ci.org/Bomret/funkster-http-headers-content)
 
+![Icon](./icon.png)
+
 Funkster is a compositional server library. This package contains combinators to parse and set the HTTP Content-\* headers.
+
+> [Typscript](http://www.typescriptlang.org/) is used to illustrate the examples.
 
 ## Install
 ```bash
 $ npm install funkster-http-headers-accept
 ```
 
-[Typscript](http://www.typescriptlang.org/) is used to illustrate the examples.
+## Build
+```bash
+$ npm install && npm run build
+```
+
+## Test
+```bash
+$ npm run test
+```
 
 ## Parsing the Accept\* headers from a request
 This module uses the [content-type](https://www.npmjs.com/package/content-type) and [content-disposition](https://www.npmjs.com/package/content-disposition) packages so essentially the same api applies for the parsing and setting the `Content-Type` and `Content-Disposition` headers.
@@ -70,3 +82,6 @@ const server = http.createServer(asRequestListener(sendJsonContentType));
 
 // start the node HTTP server and send e.g. a GET.
 ```
+
+## Meta
+Icon [funky](https://thenounproject.com/search/?q=funky&i=72105) by [iconsmind.com](https://thenounproject.com/imicons/) from the Noun Project.

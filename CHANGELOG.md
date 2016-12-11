@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.6.0] - 2016-12-11
+### Change
+- The `contentDisposition` property now has the `ContentDisposition` type.
+
 ## [0.5.0] - 2016-12-09
 ### Added
 - basic types and combinators.

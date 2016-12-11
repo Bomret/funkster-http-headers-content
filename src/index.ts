@@ -1,5 +1,5 @@
-import * as cDispo from "content-disposition";
-import * as cType from "content-type";
+import cDispo = require("content-disposition");
+import cType = require("content-type");
 import { HttpPipe, request, setHeader } from "funkster-http";
 
 export type ContentEncoding =
@@ -9,13 +9,16 @@ export type ContentEncoding =
   | "identity"
   | "br";
 
+export interface ContentType extends cType.MediaType { };
+export interface ContentDisposition extends cDispo.ContentDisposition { };
+
 export interface ContentHeaders {
-  contentType?: cType.MediaType;
+  contentType?: ContentType;
   contentLength?: number;
   contentLanguage?: string;
   contentEncoding?: ContentEncoding;
   contentLocation?: string;
-  contentDisposition?: cDispo.ContentDisposition;
+  contentDisposition?: ContentDisposition;
 }
 
 function parse<T>(name: string, transform: (value: string) => T, headers: any) {
@@ -25,7 +28,7 @@ function parse<T>(name: string, transform: (value: string) => T, headers: any) {
 
 export function parseContentHeaders(handler: (headers: ContentHeaders) => HttpPipe): HttpPipe {
   return request(req => {
-    const contentType = parse<cType.MediaType>("content-type", cType.parse, req.headers);
+    const contentType = parse<ContentType>("content-type", cType.parse, req.headers);
     const contentLength = parse<number>("content-length", x => parseInt(x, 10), req.headers);
     const contentLanguage = parse<string>("content-language", x => x, req.headers);
     const contentEncoding = parse<ContentEncoding>("content-encoding", x => <ContentEncoding>x, req.headers);
@@ -45,7 +48,7 @@ export function parseContentHeaders(handler: (headers: ContentHeaders) => HttpPi
   });
 }
 
-export function setContentType(type: string | cType.MediaType): HttpPipe {
+export function setContentType(type: string | ContentType): HttpPipe {
   if (typeof type === "string") {
     return setHeader("Content-Type", type);
   } else {
@@ -53,7 +56,9 @@ export function setContentType(type: string | cType.MediaType): HttpPipe {
   }
 }
 
-export function setContentDisposition(filenameOrOptions?: string | cDispo.Options, options?: cDispo.Options): HttpPipe {
+export function setContentDisposition(
+  filenameOrOptions?: string | ContentDisposition,
+  options?: ContentDisposition): HttpPipe {
   if (!filenameOrOptions) {
     return setHeader("Content-Disposition", cDispo());
   } else if (typeof filenameOrOptions === "string") {

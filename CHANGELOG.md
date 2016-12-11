@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.6.1] - 2016-12-12
+### Fixed
+- No more `/// <references types="content-*"/>`. Instead new exports `ContentType` and `ContentDisposition`.
+
 ## [0.6.0] - 2016-12-11
 ### Change
 - The `contentDisposition` property now has the `ContentDisposition` type.

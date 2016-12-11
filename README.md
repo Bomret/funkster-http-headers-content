@@ -11,6 +11,8 @@
 
 Funkster is a compositional server library. This package contains combinators to parse and set the HTTP Content-\* headers.
 
+Additional examples of how to build HTTP server apis with funkster can be found [here](https://github.com/Bomret/funkster-http-examples).
+
 > [Typscript](http://www.typescriptlang.org/) is used to illustrate the examples.
 
 ## Install

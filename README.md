@@ -1,11 +1,11 @@
 # funkster-http-headers-content
 
-[![npm](https://img.shields.io/npm/v/funkster-http-headers-content.svg)](https://www.npmjs.com/package/funkster-http-headers-content)
-[![node](https://img.shields.io/node/v/funkster-http-headers-content.svg)](http://nodejs.org/download/)
-[![npm](https://img.shields.io/npm/dt/funkster-http-headers-content.svg)](https://www.npmjs.com/package/funkster-http-headers-content)
-[![Known Vulnerabilities](https://snyk.io/test/github/bomret/funkster-http-headers-content/badge.svg)](https://snyk.io/test/github/bomret/funkster-http-headers-content)
-[![bitHound](https://img.shields.io/bithound/code/github/Bomret/funkster-http-headers-content.svg)](https://www.bithound.io/github/Bomret/funkster-http-headers-content)
-[![Travis](https://travis-ci.org/Bomret/funkster-http-headers-content.svg?branch=master)](https://travis-ci.org/Bomret/funkster-http-headers-content)
+[![npm](https://img.shields.io/npm/v/funkster-http-headers-content.svg?style=flat-square)](https://www.npmjs.com/package/funkster-http-headers-content)
+[![node](https://img.shields.io/node/v/funkster-http-headers-content.svg?style=flat-square)](http://nodejs.org/download/)
+[![npm](https://img.shields.io/npm/dt/funkster-http-headers-content.svg?style=flat-square)](https://www.npmjs.com/package/funkster-http-headers-content)
+[![Known Vulnerabilities](https://snyk.io/test/github/bomret/funkster-http-headers-content/badge.svg?style=flat-square)](https://snyk.io/test/github/bomret/funkster-http-headers-content)
+[![bitHound](https://img.shields.io/bithound/code/github/Bomret/funkster-http-headers-content.svg?style=flat-square)](https://www.bithound.io/github/Bomret/funkster-http-headers-content)
+[![Travis](https://img.shields.io/travis/Bomret/funkster-http-headers-content.svg?style=flat-square)](https://travis-ci.org/Bomret/funkster-http-headers-content)
 
 ![Icon](./icon.png)
 

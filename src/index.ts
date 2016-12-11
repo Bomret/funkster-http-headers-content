@@ -15,7 +15,7 @@ export interface ContentHeaders {
   contentLanguage?: string;
   contentEncoding?: ContentEncoding;
   contentLocation?: string;
-  contentDisposition?: any;
+  contentDisposition?: cDispo.ContentDisposition;
 }
 
 function parse<T>(name: string, transform: (value: string) => T, headers: any) {

@@ -34,23 +34,22 @@
     "watch:test": "npm run test -- --watch"
   },
   "dependencies": {
-    "content-disposition": "^0.5.1",
-    "content-type": "^1.0.2",
-    "funkster-http": "^0.6.0"
-  },
-  "devDependencies": {
     "@types/content-disposition": "^0.5.0",
     "@types/content-type": "^1.0.33",
-    "@types/mocha": "2.2.33",
-    "@types/node": "6.0.52",
+    "content-disposition": "^0.5.2",
+    "content-type": "^1.0.2",
+    "funkster-http": "^0.6.2"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.33",
     "@types/supertest": "^2.0.0",
-    "funkster-core": "^0.7.0",
-    "mocha": "^3.0.1",
+    "funkster-core": "^0.7.1",
+    "mocha": "^3.2.0",
     "rimraf": "^2.5.4",
     "supertest": "^2.0.1",
-    "ts-node": "^1.2.2",
-    "tslint": "4.0.2",
-    "typescript": "^2.0.10"
+    "ts-node": "^1.7.2",
+    "tslint": "^4.0.2",
+    "typescript": "^2.1.4"
   },
   "engines": {
     "node": ">=4.6.1"

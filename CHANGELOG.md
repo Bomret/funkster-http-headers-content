@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## [0.7.1] - 2016-12-12
+## [0.7.0] - 2016-12-12
 ### Changed
 - Added types for `content-disposition` and `content-type` to deps.
 

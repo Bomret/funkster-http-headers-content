@@ -1,6 +1,6 @@
 {
   "name": "funkster-http-headers-content",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Funkster is a compositional server library. This package contains combinators to parse and set the HTTP Content-* headers.",
   "license": "Unlicense",
   "repository": {

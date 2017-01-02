@@ -1,22 +1,40 @@
 {
-  "extends": "tslint:latest",
+  "extends": "tslint:recommended",
   "rules": {
+    "arrow-parens": false,
+    "semicolon": [
+      true,
+      "never"
+    ],
+    "quotemark": [
+      true,
+      "single"
+    ],
     "curly": false,
     "interface-name": [
       true,
       "never-prefix"
     ],
-    "arrow-parens": false,
     "trailing-comma": [
       true,
       {
-        "multiline": "true",
+        "multiline": "never",
         "singleline": "never"
       }
     ],
     "indent": [
       true,
       "spaces"
+    ]
+  },
+  "jsRules": {
+    "semicolon": [
+      true,
+      "never"
+    ],
+    "quotemark": [
+      true,
+      "single"
     ]
   }
 }

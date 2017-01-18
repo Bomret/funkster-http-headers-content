@@ -43,7 +43,7 @@
   "devDependencies": {
     "@types/mocha": "^2.2.35",
     "@types/supertest": "^2.0.0",
-    "funkster-core": "^0.7.2",
+    "funkster-core": "^0.8.1-2",
     "mocha": "^3.2.0",
     "rimraf": "^2.5.4",
     "supertest": "^2.0.1",

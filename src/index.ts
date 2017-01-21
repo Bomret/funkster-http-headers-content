@@ -16,12 +16,12 @@ export interface ContentDisposition {
 };
 
 export interface ContentHeaders {
-  contentType?: ContentType
-  contentLength?: number
-  contentLanguage?: string
-  contentEncoding?: ContentEncoding
-  contentLocation?: string
-  contentDisposition?: ContentDisposition
+  disposition?: ContentDisposition
+  encoding?: ContentEncoding
+  language?: string
+  length?: number
+  location?: string
+  type?: ContentType
 }
 
 function parse<T>(name: string, transform: (value: string) => T, headers: any) {
@@ -39,12 +39,12 @@ export function parseContentHeaders(handler: (headers: ContentHeaders) => HttpPi
     const contentDisposition = parse<any>('content-disposition', cDispo.parse, req.headers)
 
     const parsedHeaders: ContentHeaders = {
-      contentType,
-      contentLength,
-      contentLanguage,
-      contentEncoding,
-      contentLocation,
-      contentDisposition
+      disposition: contentDisposition,
+      encoding: contentEncoding,
+      language: contentLanguage,
+      length: contentLength,
+      location: contentLocation,
+      type: contentType
     }
 
     return handler(parsedHeaders)

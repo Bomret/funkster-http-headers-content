@@ -15,7 +15,7 @@ import {
 
 describe('When parsing the Content headers from a request', () => {
   describe('and analyzing the Content-Type', () => {
-    const pipe = parseContentHeaders((headers) => Ok(JSON.stringify(headers.contentType)))
+    const pipe = parseContentHeaders((content) => Ok(JSON.stringify(content.type)))
     const server = http.createServer(asRequestListener(pipe))
 
     describe('and none is set', () =>
@@ -40,7 +40,7 @@ describe('When parsing the Content headers from a request', () => {
   })
 
   describe('and analyzing the Content-Length', () => {
-    const pipe = parseContentHeaders((headers) => Ok(JSON.stringify(headers.contentLength)))
+    const pipe = parseContentHeaders((content) => Ok(JSON.stringify(content.length)))
     const server = http.createServer(asRequestListener(pipe))
 
     describe('and none is set', () =>
@@ -60,7 +60,7 @@ describe('When parsing the Content headers from a request', () => {
   })
 
   describe('and analyzing the Content-Language', () => {
-    const pipe = parseContentHeaders((headers) => Ok(JSON.stringify(headers.contentLanguage)))
+    const pipe = parseContentHeaders((content) => Ok(JSON.stringify(content.language)))
     const server = http.createServer(asRequestListener(pipe))
 
     describe('and none is set', () =>
@@ -80,7 +80,7 @@ describe('When parsing the Content headers from a request', () => {
   })
 
   describe('and analyzing the Content-Encoding', () => {
-    const pipe = parseContentHeaders((headers) => Ok(JSON.stringify(headers.contentEncoding)))
+    const pipe = parseContentHeaders((content) => Ok(JSON.stringify(content.encoding)))
     const server = http.createServer(asRequestListener(pipe))
 
     describe('and none is set', () =>
@@ -100,7 +100,7 @@ describe('When parsing the Content headers from a request', () => {
   })
 
   describe('and analyzing the Content-Location', () => {
-    const pipe = parseContentHeaders((headers) => Ok(JSON.stringify(headers.contentLocation)))
+    const pipe = parseContentHeaders((content) => Ok(JSON.stringify(content.location)))
     const server = http.createServer(asRequestListener(pipe))
 
     describe('and none is set', () =>
@@ -120,7 +120,7 @@ describe('When parsing the Content headers from a request', () => {
   })
 
   describe('and analyzing the Content-Disposition', () => {
-    const pipe = parseContentHeaders((headers) => Ok(JSON.stringify(headers.contentDisposition)))
+    const pipe = parseContentHeaders((content) => Ok(JSON.stringify(content.disposition)))
     const server = http.createServer(asRequestListener(pipe))
 
     describe('and none is set', () => {

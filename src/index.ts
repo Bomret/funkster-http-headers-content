@@ -34,7 +34,7 @@ export function parseContentHeaders(handler: (headers: ContentHeaders) => HttpPi
     const contentType = parse<ContentType>('content-type', cType.parse, req.headers)
     const contentLength = parse<number>('content-length', x => parseInt(x, 10), req.headers)
     const contentLanguage = parse<string>('content-language', x => x, req.headers)
-    const contentEncoding = parse<ContentEncoding>('content-encoding', x => <ContentEncoding>x, req.headers)
+    const contentEncoding = parse<ContentEncoding>('content-encoding', x => <ContentEncoding> x, req.headers)
     const contentLocation = parse<string>('content-location', x => x, req.headers)
     const contentDisposition = parse<any>('content-disposition', cDispo.parse, req.headers)
 

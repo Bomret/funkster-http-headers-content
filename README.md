@@ -29,22 +29,22 @@ $ npm run test
 ```
 
 ## Parsing the Accept\* headers from a request
-This module uses the [content-type](https://www.npmjs.com/package/content-type) and [content-disposition](https://www.npmjs.com/package/content-disposition) packages so essentially the same api applies for the parsing and setting the `Content-Type` and `Content-Disposition` headers.
+This module uses the [content-type](https://www.npmjs.com/package/content-type) and [content-disposition](https://www.npmjs.com/package/content-disposition) packages under the hood so essentially the same api applies for the parsing and setting the `Content-Type` (using `mediaType` instead of `type` for readability) and `Content-Disposition` headers.
 
 The parsed headers object has the following type:
 ```javascript
 {
-  contentType?: {
-    type: string,
-    parameters: Object
+  type?: {
+    mediaType: string,
+    parameters?: Object
   },
-  contentLength?: number,
-  contentLanguage?: string,
-  contentEncoding?: string,
-  contentLocation?: string,
-  contentDisposition?: {
-    type: string,
-    parameters: Object
+  length?: number,
+  language?: string,
+  encoding?: string,
+  location?: string,
+  disposition?: {
+    type?: string,
+    parameters?: Object
   } 
 }
 ```
@@ -55,7 +55,7 @@ import * as http from 'http';
 import { parseContentHeaders } from 'funkster-http-headers-content';
 import { asRequestListener, Ok } from 'funkster-http';
 
-const echoEncoding = parseContentHeaders(headers => Ok(headers.contentEncoding));
+const echoEncoding = parseContentHeaders(contentHeaders => Ok(contentHeaders.encoding));
 const server = http.createServer(asRequestListener(echoEncoding));
 
 // start the node HTTP server and send e.g. a GET with the Content-Encoding header set to 'gzip'.
@@ -64,7 +64,7 @@ const server = http.createServer(asRequestListener(echoEncoding));
 ## Setting the Content-* headers of the response
 The following combinators are available for setting the respective content headers.
 
-- `setContentType(type: string | MediaType)`: *Uses the same api as [content-type](https://www.npmjs.com/package/content-type).*
+- `setContentType(type: string | ContentType)`: *See [content-type](https://www.npmjs.com/package/content-type) for the parameters.*
 - `setContentDisposition(filenameOrOptions?: string | Options, options?: Options)`: *Uses the same api as [content-disposition](https://www.npmjs.com/package/content-disposition).*
 - `setContentLength(length: number)`
 - `setContentLanguage(language: string)`
@@ -77,7 +77,7 @@ import * as http from 'http';
 import { setContentType } from 'funkster-http-headers-content';
 import { asRequestListener, Ok } from 'funkster-http';
 
-const sendJsonContentType = setContentType({ type: "application/json", parameters: { charset: "utf-8" } });
+const sendJsonContentType = setContentType({ mediaType: "application/json", parameters: { charset: "utf-8" } });
 const server = http.createServer(asRequestListener(sendJsonContentType));
 
 // start the node HTTP server and send e.g. a GET.

@@ -32,10 +32,10 @@ describe('When parsing the Content headers from a request', () => {
           .type('application/json; charset=utf-8')
           .expect(200)
           .expect(JSON.stringify({
+            mediaType: 'application/json',
             parameters: {
               charset: 'utf-8'
-            },
-            type: 'application/json'
+            }
           }))))
   })
 
@@ -160,7 +160,7 @@ describe('When setting the Content headers of a response', () => {
   })
 
   describe('and setting the Content-Type to application/json via a MediaType object', () => {
-    const pipe = compose(setContentType({ type: 'application/json', parameters: { charset: 'utf-8' } }), Ok())
+    const pipe = compose(setContentType({ mediaType: 'application/json', parameters: { charset: 'utf-8' } }), Ok())
     const server = http.createServer(asRequestListener(pipe))
 
     it('should set the response header correctly', () =>

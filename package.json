@@ -33,7 +33,7 @@
     "@types/mocha": "^2.2.38",
     "@types/supertest": "^2.0.0",
     "cz-conventional-changelog": "^1.2.0",
-    "del": "^2.2.2",
+    "del": "^3.0.0",
     "funkster-core": "^0.8.7",
     "gulp": "^3.9.1",
     "gulp-gzip": "^1.4.0",

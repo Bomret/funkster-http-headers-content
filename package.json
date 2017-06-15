@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@types/mocha": "^2.2.38",
-    "@types/supertest": "^2.0.0",
+    "@types/supertest": "^2.0.1",
     "cz-conventional-changelog": "^1.2.0",
     "del": "^2.2.2",
     "funkster-core": "^0.8.7",

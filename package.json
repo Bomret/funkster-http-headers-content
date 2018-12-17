@@ -25,7 +25,7 @@
   "dependencies": {
     "@types/content-disposition": "^0.5.1",
     "@types/content-type": "^1.0.33",
-    "content-disposition": "^0.5.2",
+    "content-disposition": "^0.5.3",
     "content-type": "^1.0.2",
     "funkster-http": "^0.6.8"
   },
